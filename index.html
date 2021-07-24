@@ -38,16 +38,17 @@
         </div>
     </nav>
 
-    <div class="small-nav">
-        <div class="small-logo">
+    <div class="small-nav" id="small-nav">
+        <div class="small-logo" id="logo">
             <img src="images/logo.svg" alt="">
         </div>
         <div class="icon">
-            <i class="fal fa-bars"></i>
+            <i onclick="showlist()" class="fal fa-bars"></i>
         </div>
-        <i class="fal fa-times close"></i>
     </div>
-        <div class="small-menu">
+    <div id="small-menu">
+            <i onclick="hidelist()" class="fal fa-times close"></i>
+            <i onclick="hidelist()"class="fal fa-times close-in"></i>
             <ul>
                 <li>Home</li>
                 <li>About Us</li>
@@ -280,6 +281,12 @@
         } else {
             document.getElementById("footer").classList.remove("sticky")
         }
+        var smallNav = window.pageYOffset;
+        if (smallNav > 330) {
+            document.getElementById("small-nav").classList.add("fixed");
+        } else {
+            document.getElementById("small-nav").classList.remove("fixed");
+        }
     });
     function slider() {
         var slider = document.getElementById("slider");
@@ -318,6 +325,18 @@
         div[decreIndex - 1].style.display = "flex";
         decreIndex--;
     }
+    function showlist(){
+        document.getElementById("small-menu").style.display = "flex";
+        document.getElementById("logo").style.visibility = "hidden";
+        document.body.style.overflow = "hidden";
+        
+    }
+    function hidelist(){
+        document.getElementById("small-menu").style.display = "none";
+        document.getElementById("logo").style.visibility = "visible";
+        document.body.style.overflow = "visible";
+    }
+
 </script>
 
 </html>
