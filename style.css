@@ -306,9 +306,9 @@ nav div{
 }
 @keyframes slide{
     from{
-        transform: translateX(0px);
-    }to{
         transform: translateX(300px);
+    }to{
+        transform: translateX(0px);
     }
 }
 .slide{
@@ -597,6 +597,7 @@ nav div{
         height: 85%;
         animation: slide .2s linear;
         justify-content: unset;
+        animation: none;
     }
     .slide p {
         font-size: 20px;
@@ -773,5 +774,13 @@ nav div{
     }
     .about-btn{
         width: 50%;
+    }
+    .slide{
+        width: 385px;
+    }
+    #slider {
+        width: 80%;
+        left: 15%;
+        top: 0px;
     }
 }
