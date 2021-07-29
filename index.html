@@ -47,15 +47,15 @@
         </div>
     </div>
     <div id="small-menu">
-            <i onclick="hidelist()" class="fal fa-times close"></i>
-            <i onclick="hidelist()"class="fal fa-times close-in"></i>
-            <ul>
-                <li>Home</li>
-                <li>About Us</li>
-                <li>Products</li>
-                <li>Contact</li>
-            </ul>
-        </div>
+        <i onclick="hidelist()" class="fal fa-times close"></i>
+        <i onclick="hidelist()" class="fal fa-times close-in"></i>
+        <ul>
+            <li>Home</li>
+            <li>About Us</li>
+            <li>Products</li>
+            <li>Contact</li>
+        </ul>
+    </div>
     <div id="banner">
         <img src="images/banner1.jpg" alt="">
         <img src="images/banner2.jpg" alt="">
@@ -88,28 +88,9 @@
             <h1>Best Sellers</h1>
             <h3>Lorem, ipsum dolor sit amet consectetur adipisicing.</h3>
         </div>
-        <div class="prod-img">
-            <div class="img-box">
-                <img src="images/chilli.jpg" alt="">
-                <h2>Green chillies</h2>
-            </div>
-            <div class="img-box">
-                <img src="images/ginger.jpg" alt="">
-                <h2>Ginger</h2>
-            </div>
-            <div class="img-box">
-                <img src="images/Granites.jpg" alt="">
-                <h2>Granites</h2>
-            </div>
-            <div class="img-box">
-                <img src="images/apple.jpg" alt="">
-                <h2>Apple</h2>
-            </div>
-            <div class="img-box">
-                <img src="images/Turmeric.jpg" alt="">
-                <h2>Turmeric</h2>
-            </div>
-        </div>
+
+        <div class="prod-img" id="prod-img"></div>
+
     </div>
     <div class="about-div">
         <div class="about-img">
@@ -216,11 +197,11 @@
             <div>
                 <h6>Products</h6>
                 <ul>
-                    <li>Atmos</li>
-                    <li>Waterway</li>
-                    <li>Pristine</li>
-                    <li>Fontus</li>
-                    <li>Enclave</li>
+                    <li>Green chillies</li>
+                    <li>Ginger</li>
+                    <li>Granites</li>
+                    <li>Apple</li>
+                    <li>Turmeric</li>
                 </ul>
             </div>
             <div>
@@ -246,11 +227,24 @@
             <p>© 2020 Stone and Acres Property Developers LLP. All Rights Reserved.</p>
         </div>
     </div>
+
+    <div id="strapi">
+
+    </div>
 </body>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
     AOS.init();
 </script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function() 
+{
+    load();
+});
+</script>
+
 <script>
     var indexValue = 1;
     function banners() {
@@ -265,7 +259,6 @@
         indexValue++;
     }
     banners();
-
     var Yvalue = 0;
     var Yvalues = 0;
     window.addEventListener("scroll", function () {
@@ -325,18 +318,41 @@
         div[decreIndex - 1].style.display = "flex";
         decreIndex--;
     }
-    function showlist(){
+    function showlist() {
         document.getElementById("small-menu").style.display = "flex";
         document.getElementById("logo").style.visibility = "hidden";
         document.body.style.overflow = "hidden";
-        
+
     }
-    function hidelist(){
+    function hidelist() {
         document.getElementById("small-menu").style.display = "none";
         document.getElementById("logo").style.visibility = "visible";
         document.body.style.overflow = "visible";
     }
+function load(){
+    $.ajax({
+        url: "http://localhost:1342/products",
+        type: 'GET',
+        success: function (res) {
+            console.log(res);
+            console.log(res[0].prod_img);
 
+            $.each(res, function(i, item)
+			{
+                var imgBox = '<div class="img-box">'+
+                                '<img src ="http://localhost:1342'+res[i].prod_img.url+'"/>'+
+                                '<h2>'+res[i].product+'</h2>'+                 
+                    '</div>'
+				// var projecthtml = '<div>'+res[i].product+'</div>';
+				// var projectimg = '<img src ="http://localhost:1342'+res[i].prod_img.url+'"/>';
+                // console.log(projectimg);
+				setTimeout(function(){
+				$("#prod-img").append(imgBox);
+				}, 1000 * i );
+			});
+        }
+    });
+}
 </script>
 
 </html>
