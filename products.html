@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link rel="stylesheet" href="prod_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+</head>
+
+<body>
+    <!-- nav section -->
+    <nav id="nav" class="fixed">
+        <div class="logo">
+            <img src="images/logo.svg" alt="">
+        </div>
+        <div class="menu-list">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#footer">About Us</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="#footer">Contact</a></li>
+            </ul>
+        </div>
+        <div class="social-icons">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fas fa-phone-alt"></i>
+        </div>
+    </nav>
+
+    <div class="small-nav" id="small-nav">
+        <div class="small-logo" id="logo">
+            <img src="images/logo.svg" alt="">
+        </div>
+        <div class="icon">
+            <i onclick="showlist()" class="fal fa-bars"></i>
+        </div>
+    </div>
+    <div id="small-menu">
+        <i onclick="hidelist()" class="fal fa-times close"></i>
+        <i onclick="hidelist()" class="fal fa-times close-in"></i>
+        <ul>
+            <li>Home</li>
+            <li>About Us</li>
+            <li>Products</li>
+            <li>Contact</li>
+        </ul>
+    </div>
+    <!-- nav section ends -->
+    <div class="prod-div">
+        <h1>Our Products</h1>
+        <hr>
+        <div class="cards" id="cards">
+            <!-- <div class="card">
+                <img src="images/prod/al.jpg" alt="">
+                <h2>Almonds</h2>
+            </div>
+            <div class="card">
+                <img src="images/prod/cashew.jpg" alt="">
+                <h2>Cashew nuts</h2>
+            </div>
+            <div class="card">
+                <img src="images/prod/kishmish.jpg" alt="">
+                <h2>Kishmish</h2>
+            </div>
+            <div class="card">
+                <img src="images/prod/pista.jpg" alt="">
+                <h2>Pistachio</h2>
+            </div>
+            <div class="card">
+
+            </div>
+            <div class="card">
+
+            </div> -->
+
+        </div>
+    </div>
+    <div class="footer" id="footer">
+        <div>
+            <h6>Products</h6>
+            <ul>
+                <li>Green chillies</li>
+                <li>Ginger</li>
+                <li>Granites</li>
+                <li>Apple</li>
+                <li>Turmeric</li>
+            </ul>
+        </div>
+        <div>
+            <h6>Get in Touch</h6>
+            <ul>
+                <li>contact@stoneandacres.com</li>
+                <li>Stone & Acres Property Developers</li>
+                <li>78/2(138/2), L.B Road, Thiruvanmiyur,</li>
+                <li>Chennai 600 041</li>
+                <li>+91 9176 441 441</li>
+            </ul>
+        </div>
+        <div>
+            <h6>Connect with Us</h6>
+            <div class="social-icons wd">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fas fa-phone-alt"></i>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        allProd();
+    });
+</script>
+<script>
+    function allProd() {
+        $.ajax({
+            url: "http://localhost:1342/All-Products",
+            type: "GET",
+            success: function (res) {
+                console.log(res);
+                $.each(res, function (i, item) {
+                    var card = '<div class = "card">' +
+                        '<img src ="http://localhost:1342' + res[i].prod_img[0].url + '"/>' +
+                        '<h2>' + res[i].title + '</h2>' +
+                        '</div>'
+                        $("#cards").append(card);
+                });
+            }
+        })
+    }
+
+    function showlist() {
+        document.getElementById("small-menu").style.display = "flex";
+        document.getElementById("logo").style.visibility = "hidden";
+        document.body.style.overflow = "hidden";
+    }
+    function hidelist() {
+        document.getElementById("small-menu").style.display = "none";
+        document.getElementById("logo").style.visibility = "visible";
+        document.body.style.overflow = "visible";
+    }
+</script>
+
+</html>

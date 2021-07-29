@@ -2,6 +2,7 @@ body{
     margin: 0;
     padding: 0;
     font-family: 'Nunito Sans', sans-serif;
+    scroll-behavior: smooth;
 }
 .small-nav,#small-menu{
     display: none;
@@ -67,10 +68,14 @@ nav div{
     align-items: center;
     height: 100%;
     width: 80%;
+}
+.menu-list ul li a{
     font-size: 18px;
     font-weight: 500;
     letter-spacing: 0.02em;
     cursor: pointer;
+    color: #d6cece;
+    text-decoration: none;
 }
 .social-icons{
     display: flex;
@@ -505,14 +510,14 @@ nav div{
           }
 
       }
-      @keyframes hidemenu {
+      /* @keyframes hidemenu {
         from{
             transform: translateX(0%);
         }to{
             transform: translateX(100%);
         }
 
-    }
+    } */
       #small-menu ul{
         padding: 0;
         margin-left: 30px;
@@ -653,11 +658,6 @@ nav div{
         padding: 30px 0px;
         font-size: 10px;
     }
-    .sticky {
-        position: relative;
-        bottom: 0px;
-        z-index: -1;
-    }
 }
 
 @media (min-width: 480px) and (max-width: 991px){
@@ -783,5 +783,30 @@ nav div{
         width: 80%;
         left: 15%;
         top: 0px;
+    }
+    .footer{
+        flex-direction: column;
+        padding: 0;
+        padding-left: 15px;
+        padding-top: 30px;
+    }
+    .footer div{
+        padding-bottom: 20px;
+    }
+    .footer h6{
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    .footer ul{
+        font-size: 13px;
+    }
+    .wd {
+        width: 25%;
+        padding: 0 !important;
+        font-size: 15px;
+    }
+    .footer-btm{
+        padding: 30px 0px;
+        font-size: 10px;
     }
 }
