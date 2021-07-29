@@ -239,10 +239,9 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script>
-    $(document).ready(function() 
-{
-    load();
-});
+    $(document).ready(function () {
+        load();
+    });
 </script>
 
 <script>
@@ -329,30 +328,29 @@
         document.getElementById("logo").style.visibility = "visible";
         document.body.style.overflow = "visible";
     }
-function load(){
-    $.ajax({
-        url: "http://localhost:1342/products",
-        type: 'GET',
-        success: function (res) {
-            console.log(res);
-            console.log(res[0].prod_img);
+    function load() {
+        $.ajax({
+            url: "http://localhost:1342/products",
+            type: 'GET',
+            success: function (res) {
+                console.log(res);
+                console.log(res[0].prod_img);
 
-            $.each(res, function(i, item)
-			{
-                var imgBox = '<div class="img-box">'+
-                                '<img src ="http://localhost:1342'+res[i].prod_img.url+'"/>'+
-                                '<h2>'+res[i].product+'</h2>'+                 
-                    '</div>'
-				// var projecthtml = '<div>'+res[i].product+'</div>';
-				// var projectimg = '<img src ="http://localhost:1342'+res[i].prod_img.url+'"/>';
-                // console.log(projectimg);
-				setTimeout(function(){
-				$("#prod-img").append(imgBox);
-				}, 1000 * i );
-			});
-        }
-    });
-}
+                $.each(res, function (i, item) {
+                    var imgBox = '<div class="img-box">' +
+                        '<img src ="http://localhost:1342' + res[i].prod_img.url + '"/>' +
+                        '<h2>' + res[i].product + '</h2>' +
+                        '</div>'
+                    // var projecthtml = '<div>'+res[i].product+'</div>';
+                    // var projectimg = '<img src ="http://localhost:1342'+res[i].prod_img.url+'"/>';
+                    // console.log(projectimg);
+                    setTimeout(function () {
+                        $("#prod-img").append(imgBox);
+                    }, 1000 * i);
+                });
+            }
+        });
+    }
 </script>
 
 </html>
