@@ -19,16 +19,18 @@
 </head>
 
 <body>
+
+    <!-- nav section -->
     <nav id="nav">
         <div class="logo">
             <img src="images/logo.svg" alt="">
         </div>
         <div class="menu-list">
             <ul>
-                <li>Home</li>
-                <li>About Us</li>
-                <li>Products</li>
-                <li>Contact</li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#footer">About Us</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="#footer">Contact</a></li>
             </ul>
         </div>
         <div class="social-icons">
@@ -56,6 +58,8 @@
             <li>Contact</li>
         </ul>
     </div>
+<!-- nav section ends -->
+
     <div id="banner">
         <img src="images/banner1.jpg" alt="">
         <img src="images/banner2.jpg" alt="">
@@ -240,7 +244,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script>
     $(document).ready(function () {
-        load();
+        BestProd();
     });
 </script>
 
@@ -258,6 +262,8 @@
         indexValue++;
     }
     banners();
+
+    // nav function starts
     var Yvalue = 0;
     var Yvalues = 0;
     window.addEventListener("scroll", function () {
@@ -280,6 +286,8 @@
             document.getElementById("small-nav").classList.remove("fixed");
         }
     });
+    // nav function ends
+
     function slider() {
         var slider = document.getElementById("slider");
         var div = slider.getElementsByTagName("div");
@@ -328,29 +336,27 @@
         document.getElementById("logo").style.visibility = "visible";
         document.body.style.overflow = "visible";
     }
-    function load() {
+    function BestProd() {
         $.ajax({
             url: "http://localhost:1342/products",
             type: 'GET',
             success: function (res) {
-                console.log(res);
-                console.log(res[0].prod_img);
 
                 $.each(res, function (i, item) {
-                    var imgBox = '<div class="img-box">' +
+                    var bestprod = '<div class="img-box">' +
                         '<img src ="http://localhost:1342' + res[i].prod_img.url + '"/>' +
                         '<h2>' + res[i].product + '</h2>' +
                         '</div>'
-                    // var projecthtml = '<div>'+res[i].product+'</div>';
-                    // var projectimg = '<img src ="http://localhost:1342'+res[i].prod_img.url+'"/>';
-                    // console.log(projectimg);
-                    setTimeout(function () {
-                        $("#prod-img").append(imgBox);
-                    }, 1000 * i);
-                });
-            }
-        });
-    }
-</script>
+                        setTimeout(function () {
+                            $("#prod-img").append(bestprod);
+                        }, 1000 * i);
+                    });
+                }
+            });
+        }
+        // var projecthtml = '<div>'+res[i].product+'</div>';
+        // var projectimg = '<img src ="http://localhost:1342'+res[i].prod_img.url+'"/>';
+        // console.log(projectimg);
+    </script>
 
 </html>
