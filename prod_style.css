@@ -229,6 +229,11 @@ hr{
         align-items: center;
         display: none;
       }
+      #small-menu ul li a{
+        font-size: 22px;
+        color: white;
+        text-decoration: none;
+      }
       @keyframes slidemenu {
           from{
               transform: translateX(100%);
@@ -356,6 +361,11 @@ hr{
             display: flex;
             flex-direction: column;
             justify-content: space-around;
+          }
+          #small-menu ul li a{
+            font-size: 22px;
+            color: white;
+            text-decoration: none;
           }
           .prod-div{
             top: 70px;
