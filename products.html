@@ -57,34 +57,13 @@
         </ul>
     </div>
     <!-- nav section ends -->
-    <div class="prod-div">
+   <div class="prod-div">
         <h1>Our Products</h1>
         <hr>
-        <div class="cards" id="cards">
-            <!-- <div class="card">
-                <img src="images/prod/al.jpg" alt="">
-                <h2>Almonds</h2>
-            </div>
-            <div class="card">
-                <img src="images/prod/cashew.jpg" alt="">
-                <h2>Cashew nuts</h2>
-            </div>
-            <div class="card">
-                <img src="images/prod/kishmish.jpg" alt="">
-                <h2>Kishmish</h2>
-            </div>
-            <div class="card">
-                <img src="images/prod/pista.jpg" alt="">
-                <h2>Pistachio</h2>
-            </div>
-            <div class="card">
-
-            </div>
-            <div class="card">
-
-            </div> -->
-
-        </div>
+        <div class="cards" id="cards"></div>
+    </div>
+    <div id="download" title="Download Brochure">
+    <a><i class="fal fa-arrow-to-bottom"></i></a>
     </div>
     <div class="footer" id="footer">
         <div>
@@ -122,6 +101,7 @@
 <script>
     $(document).ready(function () {
         allProd();
+        pdf();
     });
 </script>
 <script>
@@ -142,6 +122,20 @@
         })
     }
 
+    function pdf() {
+        $.ajax({
+            url: "http://localhost:1342/pdfs",
+            type: "GET",
+            success: function (res) {
+                console.log(res);
+                $.each(res, function (i, item) {
+                    var download = document.getElementById("download");
+                    var a = download.getElementsByTagName("a");
+                    $(a).attr("href", `http://localhost:1342${res[i].pdf.url}`);
+                });
+            }
+        })
+    }
     function showlist() {
         document.getElementById("small-menu").style.display = "flex";
         document.getElementById("logo").style.visibility = "hidden";
