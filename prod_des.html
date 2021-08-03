@@ -122,25 +122,36 @@
         success: function (res) {
           console.log(res);
           var title = "<h1 class='product_title'>" + res.prod_title + "</h1>";
-          var des =
-            "<div>" +
-            "<h3 class='product_sub_head'>" +
-            res.prod_sub +
-            "</h3>" +
-            res.prod_des +
-            "</div>";
-          var benefits =
-            "<div><h2>" + res.benefits + "</h2>" + res.bene_des + "</div>";
-          var packing =
-            "<div><h2>" +
-            res.packing +
-            "</h2>" +
-            "<h3>" +
-            res.pack_sub +
-            "</h3>" +
-            "<p>" +
-            res.pack_des +
-            "</p></div>";
+          if (res.prod_sub && res.prod_des) {
+            var des =
+              "<div>" +
+              "<h3 class='product_sub_head'>" +
+              res.prod_sub +
+              "</h3>" +
+              res.prod_des +
+              "</div>";
+          }
+          if (res.bene_des) {
+            var benefits =
+              "<div><h2>" +
+              "Benefits of " +
+              res.prod_title +
+              "</h2>" +
+              res.bene_des +
+              "</div>";
+          }
+          if (res.packing && res.pack_sub && res.pack_des) {
+            var packing =
+              "<div><h2>" +
+              res.packing +
+              "</h2>" +
+              "<h3>" +
+              res.pack_sub +
+              "</h3>" +
+              "<p>" +
+              res.pack_des +
+              "</p></div>";
+          }
           if (res.prod_img.length == 2) {
             var images =
               '<img src ="http://localhost:1342' +
