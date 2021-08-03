@@ -278,6 +278,7 @@ nav div {
   background-size: cover;
   position: relative;
   height: 800px;
+  z-index: 1;
 }
 .arrow {
   position: absolute;
@@ -597,7 +598,7 @@ nav div {
   }
   .feedback {
     padding: 30px;
-    height: 180vh;
+    height: 225vh;
   }
   #slider {
     width: 100%;
@@ -646,6 +647,9 @@ nav div {
     padding: 0;
     padding-left: 15px;
     padding-top: 30px;
+  }
+  .sticky {
+    position: unset;
   }
   .footer div {
     padding-bottom: 20px;
@@ -791,11 +795,17 @@ nav div {
   }
   .slide {
     width: 385px;
+    height: 88%;
+    top: 10%;
+  }
+  .slide p {
+    font-size: 18px;
+    line-height: 35px;
   }
   #slider {
     width: 80%;
-    left: 15%;
-    top: 0px;
+    left: 10%;
+    top: 0;
   }
   .footer {
     flex-direction: column;
@@ -821,5 +831,8 @@ nav div {
   .footer-btm {
     padding: 30px 0px;
     font-size: 10px;
+  }
+  .sticky {
+    position: sticky;
   }
 }
