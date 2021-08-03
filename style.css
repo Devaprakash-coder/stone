@@ -612,9 +612,8 @@ nav div {
     line-height: 30px;
   }
   .arrow {
-    width: 30%;
-    top: 88%;
-    left: 33%;
+    width: 35%;
+    position: static;
   }
   .arrow i {
     width: 50px;
