@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products</title>
+    <link rel="stylesheet" href="prod_des.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <!-- nav section -->
+    <nav id="nav" class="fixed">
+      <div class="logo">
+        <img src="images/logo.svg" alt="" />
+      </div>
+      <div class="menu-list">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#footer">About Us</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="#footer">Contact</a></li>
+        </ul>
+      </div>
+      <div class="social-icons">
+        <i class="fab fa-facebook-f"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fas fa-phone-alt"></i>
+      </div>
+    </nav>
+
+    <div class="small-nav" id="small-nav">
+      <div class="small-logo" id="logo">
+        <img src="images/logo.svg" alt="" />
+      </div>
+      <div class="icon">
+        <i onclick="showlist()" class="fal fa-bars"></i>
+      </div>
+    </div>
+    <div id="small-menu">
+      <i onclick="hidelist()" class="fal fa-times close"></i>
+      <i onclick="hidelist()" class="fal fa-times close-in"></i>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#footer">About Us</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="#footer">Contact</a></li>
+      </ul>
+    </div>
+    <!-- nav section ends -->
+
+    <div class="container-section">
+      <div class="product_images" id="product_images"></div>
+      <div class="product_description" id="product_description">
+        <button class="btn-enquiry">Enquire Now</button>
+        <button class="btn-enquiry" onclick="pdf()">Download Brochure</button>
+      </div>
+    </div>
+
+    <div class="footer" id="footer">
+      <div>
+        <h6>Products</h6>
+        <ul>
+          <li>Green chillies</li>
+          <li>Ginger</li>
+          <li>Granites</li>
+          <li>Apple</li>
+          <li>Turmeric</li>
+        </ul>
+      </div>
+      <div>
+        <h6>Get in Touch</h6>
+        <ul>
+          <li>contact@stoneandacres.com</li>
+          <li>Stone & Acres Property Developers</li>
+          <li>78/2(138/2), L.B Road, Thiruvanmiyur,</li>
+          <li>Chennai 600 041</li>
+          <li>+91 9176 441 441</li>
+        </ul>
+      </div>
+      <div>
+        <h6>Connect with Us</h6>
+        <div class="social-icons wd">
+          <i class="fab fa-facebook-f"></i>
+          <i class="fab fa-instagram"></i>
+          <i class="fas fa-phone-alt"></i>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      var id = localStorage.getItem("id");
+      console.log(id);
+      allProd(id);
+    });
+  </script>
+  <script>
+    function allProd(id) {
+      $.ajax({
+        url: `http://localhost:1342/All-Products/${id}`,
+        type: "GET",
+        success: function (res) {
+          console.log(res);
+          var title = "<h1 class='product_title'>" + res.prod_title + "</h1>";
+          var des =
+            "<div>" +
+            "<h3 class='product_sub_head'>" +
+            res.prod_sub +
+            "</h3>" +
+            res.prod_des +
+            "</div>";
+          var benefits =
+            "<div><h2>" + res.benefits + "</h2>" + res.bene_des + "</div>";
+          var packing =
+            "<div><h2>" +
+            res.packing +
+            "</h2>" +
+            "<h3>" +
+            res.pack_sub +
+            "</h3>" +
+            "<p>" +
+            res.pack_des +
+            "</p></div>";
+          if (res.prod_img.length == 2) {
+            var images =
+              '<img src ="http://localhost:1342' +
+              res.prod_img[0].url +
+              '" class = "product_img"/>' +
+              '<img src ="http://localhost:1342' +
+              res.prod_img[1].url +
+              '" class = "product_img"/>';
+          } else if (res.prod_img.length == 1) {
+            var images =
+              '<img src ="http://localhost:1342' +
+              res.prod_img[0].url +
+              '" class = "product_img"/>';
+          } else {
+            var images = "";
+          }
+          $("#product_images").append(images);
+          $("#product_description").prepend(title, des, benefits, packing);
+        },
+      });
+    }
+    function pdf() {
+      $.ajax({
+        url: "http://localhost:1342/pdfs",
+        type: "GET",
+        success: function (res) {
+          window.open(`http://localhost:1342${res[0].pdf.url}`, "_blank");
+        },
+      });
+    }
+    function showlist() {
+      document.getElementById("small-menu").style.display = "flex";
+      document.getElementById("logo").style.visibility = "hidden";
+      document.body.style.overflow = "hidden";
+    }
+    function hidelist() {
+      document.getElementById("small-menu").style.display = "none";
+      document.getElementById("logo").style.visibility = "visible";
+      document.body.style.overflow = "visible";
+    }
+  </script>
+</html>

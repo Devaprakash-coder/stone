@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,7 +15,6 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 </head>
-
 <body>
     <!-- nav section -->
     <nav id="nav" class="fixed">
@@ -57,14 +55,15 @@
         </ul>
     </div>
     <!-- nav section ends -->
-   <div class="prod-div">
+    <div class="prod-div">
         <h1>Our Products</h1>
         <hr>
         <div class="cards" id="cards"></div>
     </div>
     <div id="download" title="Download Brochure">
-    <a><i class="fal fa-arrow-to-bottom"></i></a>
+        <a></a><i class="fal fa-arrow-to-bottom"></i></a>
     </div>
+    
     <div class="footer" id="footer">
         <div>
             <h6>Products</h6>
@@ -96,7 +95,6 @@
         </div>
     </div>
 </body>
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script>
     $(document).ready(function () {
@@ -112,27 +110,28 @@
             success: function (res) {
                 console.log(res);
                 $.each(res, function (i, item) {
-                    var card = '<div class = "card">' +
+                    var card = '<div class = "card"  onclick="next('+res[i].id+')">' +
                         '<img src ="http://localhost:1342' + res[i].prod_img[0].url + '"/>' +
-                        '<h2>' + res[i].title + '</h2>' +
+                        '<h2>' + res[i].prod_title + '</h2>' +
                         '</div>'
-                        $("#cards").append(card);
+                    $("#cards").append(card);
                 });
             }
         })
     }
-
+    function next(i) {
+      console.log(i);
+      localStorage.setItem("id",JSON.stringify(i));
+      document.location.href = "prod_des.html";
+    }
     function pdf() {
         $.ajax({
             url: "http://localhost:1342/pdfs",
             type: "GET",
             success: function (res) {
-                console.log(res);
-                $.each(res, function (i, item) {
                     var download = document.getElementById("download");
                     var a = download.getElementsByTagName("a");
-                    $(a).attr("href", `http://localhost:1342${res[i].pdf.url}`);
-                });
+                    $(a).attr("href", `http://localhost:1342${res[0].pdf.url}`);
             }
         })
     }
@@ -147,5 +146,4 @@
         document.body.style.overflow = "visible";
     }
 </script>
-
 </html>
