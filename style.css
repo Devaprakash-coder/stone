@@ -593,6 +593,7 @@ nav div {
   .feedback {
     padding: 30px;
     justify-content: unset;
+    height: 100%;
   }
   #slider {
     width: 100%;
