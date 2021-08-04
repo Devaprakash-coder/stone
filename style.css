@@ -55,8 +55,9 @@ nav div {
 }
 .logo img {
   width: 50%;
-  height: 100%;
+  height: 70%;
   cursor: pointer;
+  filter: invert(1);
 }
 .menu-list {
   width: 40%;
@@ -122,7 +123,6 @@ nav div {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  align-items: center;
 }
 .card {
   text-align: center;
@@ -198,6 +198,7 @@ nav div {
 .about-div {
   padding: 100px;
   display: flex;
+  background: url(images/bg-2.jpg);
 }
 .about-img,
 .about-txt {
@@ -214,15 +215,20 @@ nav div {
   position: relative;
 }
 .color-img {
-  background: url(images/image.jpg);
-  background-size: contain;
-  background-position: center;
+  background: black;
   position: absolute;
   bottom: 25px;
   left: 25px;
   width: 100%;
   height: 100%;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.color-img img {
+  width: 50%;
+  height: 50%;
 }
 
 [data-aos="new-animation"] {
@@ -234,14 +240,16 @@ nav div {
   left: 25px;
 }
 .about-txt h1 {
-  font-size: 50px;
+  font-size: 45px;
   font-weight: 100;
+  color: white;
 }
 .about-txt p {
-  font-size: 22px;
+  font-size: 17px;
   padding-right: 100px;
   line-height: 1.5;
-  color: gray;
+  color: #c5c5c5;
+  margin: 30px 0px;
 }
 .about-btn {
   justify-content: space-between;
@@ -249,25 +257,29 @@ nav div {
   width: 55%;
 }
 .about-btn button {
-  border: 1px solid lightgray;
-  background: none;
   font-size: 15px;
   height: 57px;
   width: 145px;
+  background: none;
+  border: none;
+  color: white;
   transition: all 0.5s;
 }
-.about-btn button:first-child {
+.about-btn a:first-of-type {
   font-weight: 600;
   color: white;
   background: linear-gradient(270deg, #7b1fa2, #4762ff);
   border: none;
 }
-.about-btn button:first-child:hover,
+.about-btn a:first-of-type:hover,
 .ask-email button:hover {
   background: linear-gradient(90deg, #7b1fa2, #4762ff);
 }
-.about-btn button:last-child:hover {
-  border: none;
+.about-btn a:last-of-type {
+  border: 1px solid lightgray;
+}
+.about-btn a:last-of-type:hover {
+  border: 1px solid transparent;
   background: black;
   color: white;
 }
@@ -317,6 +329,12 @@ nav div {
   overflow: hidden;
   width: 80%;
 }
+.slide {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: slide 0.2s linear;
+}
 @keyframes slide {
   from {
     transform: translateX(300px);
@@ -325,11 +343,13 @@ nav div {
     transform: translateX(0px);
   }
 }
-.slide {
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  animation: slide 0.2s linear;
+@keyframes slidemenu {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
 }
 .slide p {
   font-size: 24px;
@@ -506,14 +526,12 @@ nav div {
     display: flex;
     align-items: center;
     display: none;
+    animation: slidemenu 0.5s linear;
   }
-  @keyframes slidemenu {
-    from {
-      transform: translateX(100%);
-    }
-    to {
-      transform: translateX(0%);
-    }
+  .small-logo img {
+    filter: invert(1);
+    width: 100%;
+    height: 100%;
   }
   #small-menu ul {
     padding: 0;
@@ -545,7 +563,7 @@ nav div {
     margin: 30px;
   }
   .prod-div {
-    padding: 0;
+    padding: 70px 0px;
   }
   .prod-head h3 {
     padding: 10px;
@@ -561,15 +579,17 @@ nav div {
   .about-div {
     flex-direction: column;
     padding: 0;
+    align-items: center;
+    justify-content: center;
   }
   .about-img {
-    height: 500px;
+    height: 300px;
     width: 100%;
     justify-content: center;
   }
   .color {
     width: 75%;
-    height: 50%;
+    height: 70%;
   }
   .about-txt {
     width: 90%;
@@ -584,7 +604,7 @@ nav div {
     font-size: 16px;
   }
   .about-btn {
-    width: 70%;
+    width: 75%;
   }
   .about-btn button {
     height: 45px;
@@ -681,6 +701,11 @@ nav div {
     width: 15%;
     margin-left: 20px;
   }
+  .small-logo img {
+    filter: invert(1);
+    width: 100%;
+    height: 100%;
+  }
   .icon i {
     font-size: 35px;
     margin-right: 20px;
@@ -721,6 +746,7 @@ nav div {
     display: flex;
     align-items: center;
     display: none;
+    animation: slidemenu 0.5s linear;
   }
   #small-menu ul {
     padding: 0;
@@ -757,8 +783,8 @@ nav div {
     padding-bottom: 75px;
   }
   .sticky {
-    position: relative;
-    bottom: 0px;
+    z-index: -1;
+    position: sticky;
   }
   .ask-div {
     flex-direction: column;
@@ -821,8 +847,5 @@ nav div {
   .footer-btm {
     padding: 30px 0px;
     font-size: 10px;
-  }
-  .sticky {
-    position: sticky;
   }
 }

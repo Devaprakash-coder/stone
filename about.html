@@ -4,8 +4,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Products</title>
+    <title>About Us</title>
     <link rel="stylesheet" href="prod_style.css" />
+    <link rel="stylesheet" href="about.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -24,6 +25,7 @@
       integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
       crossorigin="anonymous"
     />
+    <!-- <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> -->
   </head>
   <body>
     <!-- nav section -->
@@ -65,15 +67,78 @@
       </ul>
     </div>
     <!-- nav section ends -->
-    <div class="prod-div">
-      <h1>Our Products</h1>
-      <hr />
-      <div class="cards" id="cards"></div>
-    </div>
 
-    <!-- <div id="download" title="Download Brochure">
-        <a></a><i class="fal fa-arrow-to-bottom"></i></a>
-    </div> -->
+    <div class="about-div">
+      <div class="content-div">
+        <h1>About The Company</h1>
+        <hr />
+        <p>
+          PnB group called as Panneerdas and Babudas group which was founded in
+          2002 for more than 20 years a grown simply beginning to a corporate
+          organisation. Pnb group in the field of Electronic Software field,
+          Infrastructure projects, Construction, Residential township promotion,
+          Hotels & Resorts and Export and Import.
+        </p>
+        <p>
+          Pnb Exporters it is an import and export company of spicy commodities,
+          exporting spices to Srilanka, Singapore and Dubai and we also experts
+          in FMCG, metals, Construction materials across the globe. Pnb exports
+          also imports dhal From Turkey.
+        </p>
+      </div>
+
+      <div class="content-div">
+        <h1>About the Promoters</h1>
+        <hr />
+        <p>
+          Company was promoted by VGP Babudas alternator experience in retail
+          business in the field of Electronics, Retail stores, and Real estate
+          Township promoters, Flat developers, Amusement park and Finance
+          business, Exporters with this experience has started as a
+          simpleorganisation to a corporate entity.
+        </p>
+      </div>
+
+      <div class="content-div">
+        <h1>PnB realty ltd</h1>
+        <hr />
+        <p>
+          PnB realty has officially completed projects in Venkatamangalam around
+          6 Acres approved projects. The company got an approval to promote
+          township in Mysore in extend of 17.5 Acres (developed project by RERA)
+          and it located in Mysore coorg road, Hobli.
+        </p>
+        <p>
+          Company is now promoting another unique full developed project in our
+          prosperity at Venkatamangalam in the vicinity of Medavakkam and new
+          sub of Metropolitan like VIT and Tagore college. Then layout has fully
+          approved and all infrastructures like Black Thoar Road,Layouts, Water
+          connection, Electricity, Drainage, Park. The project is approved by
+          RERA.
+        </p>
+      </div>
+
+      <div class="content-div">
+        <h1>PnB Exporters Pvt ltd</h1>
+        <hr />
+        <p>
+          We exports best quality of chillies to Srilanka, Singapore and Dubai.
+        </p>
+        <p>
+          We exports green chillies to Srilankan Society groups in Colombo and
+          also we Imports best quality of Dhal from Turkey to Indian Market.
+        </p>
+        <p>
+          Our Quality, Best rate, Reliability and performance represents our
+          moral “your requirements our commitment.
+        </p>
+      </div>
+      <div class="content-div">
+        <h1>Business Opportunities</h1>
+        <hr />
+        <p>PnB invites like-minded people to promote across the World.</p>
+      </div>
+    </div>
 
     <div class="footer" id="footer">
       <div>
@@ -110,53 +175,11 @@
       </div>
     </div>
   </body>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <!-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
-    $(document).ready(function () {
-      allProd();
-      pdf();
-    });
-  </script>
+    AOS.init();
+  </script> -->
   <script>
-    function allProd() {
-      $.ajax({
-        url: "http://localhost:1342/All-Products",
-        type: "GET",
-        success: function (res) {
-          console.log(res);
-          $.each(res, function (i, item) {
-            var card =
-              '<div class = "card"  onclick="next(' +
-              res[i].id +
-              ')">' +
-              '<img src ="http://localhost:1342' +
-              res[i].prod_img[0].url +
-              '"/>' +
-              "<h2>" +
-              res[i].prod_title +
-              "</h2>" +
-              "</div>";
-            $("#cards").append(card);
-          });
-        },
-      });
-    }
-    function next(i) {
-      console.log(i);
-      localStorage.setItem("id", JSON.stringify(i));
-      document.location.href = "prod_des.html";
-    }
-    function pdf() {
-      $.ajax({
-        url: "http://localhost:1342/pdfs",
-        type: "GET",
-        success: function (res) {
-          var download = document.getElementById("download");
-          var a = download.getElementsByTagName("a");
-          $(a).attr("href", `http://localhost:1342${res[0].pdf.url}`);
-        },
-      });
-    }
     function showlist() {
       document.getElementById("small-menu").style.display = "flex";
       document.getElementById("logo").style.visibility = "hidden";

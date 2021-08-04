@@ -31,14 +31,14 @@
     <!-- nav section -->
     <nav id="nav">
       <div class="logo">
-        <img src="images/logo.svg" alt="" />
+        <img src="images/logo.png" alt="" />
       </div>
       <div class="menu-list">
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="#footer">About Us</a></li>
+          <li><a href="about.html">About Us</a></li>
           <li><a href="products.html">Products</a></li>
-          <li><a href="#footer">Contact</a></li>
+          <li><a href="#about">Contact</a></li>
         </ul>
       </div>
       <div class="social-icons">
@@ -49,7 +49,7 @@
     </nav>
     <div class="small-nav" id="small-nav">
       <div class="small-logo" id="logo">
-        <img src="images/logo.svg" alt="" />
+        <img src="images/logo.png" alt="" />
       </div>
       <div class="icon">
         <i onclick="showlist()" class="fal fa-bars"></i>
@@ -60,17 +60,13 @@
       <i onclick="hidelist()" class="fal fa-times close-in"></i>
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="#footer">About Us</a></li>
+        <li><a href="about.html">About Us</a></li>
         <li><a href="products.html">Products</a></li>
         <li><a href="#footer">Contact</a></li>
       </ul>
     </div>
     <!-- nav section ends -->
-    <div id="banner">
-      <!-- <img src="images/banner1.jpg" alt="" />
-      <img src="images/banner2.jpg" alt="" />
-      <img src="images/banner3.jpg" alt="" /> -->
-    </div>
+    <div id="banner"></div>
     <div class="card-div">
       <div class="card">
         <i class="material-icons">campaign</i>
@@ -85,12 +81,12 @@
       <div class="card">
         <i class="material-icons">payments</i>
         <h4>Trouble-free Transactions</h4>
-        <p>Support for every legal transaction</p>
+        <p>Support for every transaction</p>
       </div>
       <div class="card">
         <i class="material-icons">insights</i>
         <h4>Gainful Insights</h4>
-        <p>Real-time real estate guidance</p>
+        <p>Real-time market pricing</p>
       </div>
     </div>
     <div class="prod-div">
@@ -100,7 +96,7 @@
       </div>
       <div class="prod-img" id="prod-img"></div>
     </div>
-    <div class="about-div">
+    <div class="about-div" id="about">
       <div class="about-img">
         <div class="color">
           <div
@@ -108,23 +104,27 @@
             data-aos="new-animation"
             data-aos-duration="1000"
             data-aos-once="true"
-          ></div>
+          >
+            <img src="images/logo_wht.png" alt="" />
+          </div>
         </div>
       </div>
       <div class="about-txt">
         <h1>About Us</h1>
         <p>
-          With in-depth knowledge of the real estate industry, Stone & Acres is
-          poised to carve out a niche for itself as one of India’s most
-          transparent and reliable real estate companies.
+          We exports best quality of chillies to Srilanka, Singapore and Dubai.
+          We exports green chillies to Srilankan Society groups in Colombo and
+          also we Import best quality of Dhal from Turkey to Indian Market. Our
+          Quality, Best rate, Reliability and performance represents our moral
+          “your requirements our commitment”.
         </p>
         <div class="about-btn">
-          <button>Read More</button>
-          <button>Contact Us</button>
+          <a href="about.html"><button>Read More</button></a>
+          <a href="#contact.html"><button>Contact Us</button></a>
         </div>
       </div>
     </div>
-    <div class="feedback">
+    <!-- <div class="feedback">
       <div class="heading">
         <h4>REAL STORIES</h4>
       </div>
@@ -177,11 +177,11 @@
         <i onclick="incre()" class="fa fa-angle-left"></i>
         <i onclick="decre()" class="fa fa-angle-right"></i>
       </div>
-    </div>
+    </div> -->
     <div class="counts">
       <div>
-        <h1>9</h1>
-        <p>PROJECTS</p>
+        <h1>50<sup>+</sup></h1>
+        <p>PRODUCTS</p>
       </div>
       <div>
         <h1>836</h1>
@@ -194,7 +194,7 @@
     </div>
     <div class="ask-div">
       <div class="ask-head">
-        <h1>Ready to get started? Join the Stone & Acres community.</h1>
+        <h1>Ready to get started? Join the PnB Exporters community.</h1>
       </div>
       <div class="ask-email">
         <button>Send an Enquiry</button>
@@ -217,11 +217,15 @@
         <div>
           <h6>Get in Touch</h6>
           <ul>
-            <li>contact@stoneandacres.com</li>
-            <li>Stone & Acres Property Developers</li>
-            <li>78/2(138/2), L.B Road, Thiruvanmiyur,</li>
-            <li>Chennai 600 041</li>
-            <li>+91 9176 441 441</li>
+            <li>sales@bdcode.in</li>
+            <li>PnB Exporters</li>
+            <li>
+              F1,Saikripa Apartments, 78D,<br />
+              Gulmohar avenue Velachery main road,<br />
+              Guindy
+            </li>
+            <li>Chennai TN 600032</li>
+            <li>+91 9345760140</li>
           </ul>
         </div>
         <div>
@@ -255,8 +259,6 @@
 
   <script>
     // nav function starts
-    // var Yvalue = 0;
-    // var Yvalues = 0;
     window.addEventListener("scroll", function () {
       var nav = window.pageYOffset;
       if (nav > 450) {
@@ -265,7 +267,8 @@
         document.getElementById("nav").classList.remove("fixed");
       }
       var footer = window.pageYOffset;
-      if (footer > 3496) {
+      console.log(footer);
+      if (footer > 2500) {
         document.getElementById("footer").classList.add("sticky");
       } else {
         document.getElementById("footer").classList.remove("sticky");
@@ -279,43 +282,44 @@
     });
     // nav function ends
 
-    function slider() {
-      var slider = document.getElementById("slider");
-      var div = slider.getElementsByTagName("div");
-      for (let index = 0; index < div.length; index++) {
-        div[index].style.display = "none";
-        div[0].style.display = "flex";
-      }
-    }
-    slider();
-    var increIndex = 1;
-    function incre() {
-      var slider = document.getElementById("slider");
-      var div = slider.getElementsByTagName("div");
-      for (let index = 0; index < div.length; index++) {
-        div[index].style.display = "none";
-      }
-      if (increIndex > div.length) {
-        increIndex = 1;
-      }
-      console.log(increIndex);
-      div[increIndex - 1].style.display = "flex";
-      increIndex++;
-    }
-    var decreIndex = 1;
-    function decre() {
-      var slider = document.getElementById("slider");
-      var div = slider.getElementsByTagName("div");
-      for (let index = 0; index < div.length; index++) {
-        div[index].style.display = "none";
-      }
-      if (decreIndex == 0) {
-        decreIndex = div.length;
-      }
-      console.log(decreIndex);
-      div[decreIndex - 1].style.display = "flex";
-      decreIndex--;
-    }
+    // function slider() {
+    //   var slider = document.getElementById("slider");
+    //   var div = slider.getElementsByTagName("div");
+    //   for (let index = 0; index < div.length; index++) {
+    //     div[index].style.display = "none";
+    //     div[0].style.display = "flex";
+    //   }
+    // }
+    // slider();
+    // var increIndex = 1;
+    // function incre() {
+    //   var slider = document.getElementById("slider");
+    //   var div = slider.getElementsByTagName("div");
+    //   for (let index = 0; index < div.length; index++) {
+    //     div[index].style.display = "none";
+    //   }
+    //   if (increIndex > div.length) {
+    //     increIndex = 1;
+    //   }
+    //   console.log(increIndex);
+    //   div[increIndex - 1].style.display = "flex";
+    //   increIndex++;
+    // }
+    // var decreIndex = 1;
+    // function decre() {
+    //   var slider = document.getElementById("slider");
+    //   var div = slider.getElementsByTagName("div");
+    //   for (let index = 0; index < div.length; index++) {
+    //     div[index].style.display = "none";
+    //   }
+    //   if (decreIndex == 0) {
+    //     decreIndex = div.length;
+    //   }
+    //   console.log(decreIndex);
+    //   div[decreIndex - 1].style.display = "flex";
+    //   decreIndex--;
+    // }
+
     function showlist() {
       document.getElementById("small-menu").style.display = "flex";
       document.getElementById("logo").style.visibility = "hidden";
