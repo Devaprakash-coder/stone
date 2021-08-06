@@ -12,7 +12,7 @@ body {
   width: 5px;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: purple;
+  background-color: brown;
   border-radius: 20px;
 }
 ::-webkit-scrollbar-track {
@@ -199,6 +199,8 @@ nav div {
   padding: 100px;
   display: flex;
   background: url(images/bg-2.jpg);
+  position: relative;
+  z-index: 1;
 }
 .about-img,
 .about-txt {
@@ -783,7 +785,7 @@ nav div {
     padding-bottom: 75px;
   }
   .sticky {
-    z-index: -1;
+    z-index: 0;
     position: sticky;
   }
   .ask-div {
@@ -840,7 +842,7 @@ nav div {
     font-size: 13px;
   }
   .wd {
-    width: 25%;
+    width: 12%;
     padding: 0 !important;
     font-size: 15px;
   }

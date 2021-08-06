@@ -27,7 +27,7 @@ hr {
 }
 .content-div {
   width: 60%;
-  padding: 100px;
+  padding: 50px;
   animation: opacity 1s linear;
   position: relative;
 }
@@ -51,12 +51,9 @@ hr {
     top: 0;
   }
   .content-div {
-    padding: 50px;
+    padding: 25px;
     width: 100%;
     animation: none;
-  }
-  .content-div:last-of-type {
-    padding-top: 200px;
   }
   h1 {
     font-size: 30px;
@@ -75,8 +72,5 @@ hr {
   .content-div {
     width: 75%;
     animation: none;
-  }
-  .content-div:last-of-type {
-    padding-top: 111px;
   }
 }

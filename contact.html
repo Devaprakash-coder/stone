@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us</title>
+    <link rel="stylesheet" href="prod_style.css" />
+    <link rel="stylesheet" href="about.css" />
+    <link rel="stylesheet" href="contact.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <!-- nav section -->
+    <nav id="nav" class="fixed">
+      <div class="logo">
+        <img src="images/logo.png" alt="" />
+      </div>
+      <div class="menu-list">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="social-icons">
+        <i class="fab fa-facebook-f"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fas fa-phone-alt"></i>
+      </div>
+    </nav>
+
+    <div class="small-nav" id="small-nav">
+      <div class="small-logo" id="logo">
+        <img src="images/logo.png" alt="" />
+      </div>
+      <div class="icon">
+        <i onclick="showlist()" class="fal fa-bars"></i>
+      </div>
+    </div>
+    <div id="small-menu">
+      <i onclick="hidelist()" class="fal fa-times close"></i>
+      <i onclick="hidelist()" class="fal fa-times close-in"></i>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <!-- nav section ends -->
+
+    <div class="temp">
+      <h1>Contact Us</h1>
+      <hr />
+    </div>
+    <div class="form-div">
+      <div class="form-box">
+        <div class="head-div">
+          <div class="heading">
+            <h2>Drop us a line</h2>
+            <p>
+              Send us an enquiry and a member of our team will get in touch with
+              you at the earliest.
+            </p>
+          </div>
+          <div class="icon-div">
+            <svg
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="0px"
+              y="0px"
+              width="64px"
+              height="64px"
+              viewBox="0 0 64 64"
+              enable-background="new 0 0 64 64"
+              xml:space="preserve"
+            >
+              <style>
+                #undefined:hover .iconbox-icon-container defs stop:first-child {
+                  stop-color: rgb(0, 0, 0);
+                }
+                #undefined:hover .iconbox-icon-container defs stop:last-child {
+                  stop-color: rgb(0, 0, 0);
+                }
+              </style>
+              <defs xmlns="http://www.w3.org/2000/svg">
+                <linearGradient
+                  gradientUnits="userSpaceOnUse"
+                  id="grad568049"
+                  x1="0%"
+                  y1="0%"
+                  x2="0%"
+                  y2="100%"
+                >
+                  <stop offset="0%" stop-color="rgb(216, 219, 226)"></stop>
+                  <stop offset="100%" stop-color="rgb(216, 219, 226)"></stop>
+                </linearGradient>
+              </defs>
+              <path
+                stroke-width="2"
+                stroke-linejoin="bevel"
+                stroke-miterlimit="10"
+                d="M1,30L63,1L23,41Z"
+                stroke="url(#grad568049)"
+                fill="none"
+                style="stroke-dasharray: 150, 152; stroke-dashoffset: 0"
+              ></path>
+              <path
+                stroke-width="2"
+                stroke-linejoin="bevel"
+                stroke-miterlimit="10"
+                d="M34,63L63,1L23,41Z"
+                stroke="url(#grad568049)"
+                fill="none"
+                style="stroke-dasharray: 150, 152; stroke-dashoffset: 0"
+              ></path>
+            </svg>
+          </div>
+        </div>
+
+        <div class="form">
+          <form method="POST" id="myform">
+            <div>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder="Name"
+                required
+              />
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Email address"
+                required
+              />
+              <input
+                type="text"
+                name="mobile"
+                id="mobile"
+                placeholder="Mobile number"
+                required
+                maxlength="10"
+              />
+            </div>
+            <div>
+              <input
+                type="text"
+                name="location"
+                id="location"
+                placeholder="Location"
+                required
+              />
+              <input
+                type="company"
+                name="company"
+                id="company"
+                placeholder="Company Name"
+                required
+              />
+              <textarea
+                type="text"
+                name="message"
+                id="message"
+                placeholder="Message"
+              ></textarea>
+              <section>
+                <button type="submit" id="submit">Send Message</button>
+                <a href="tel:+91 9345760140"
+                  ><button type="button">Call Us</button></a
+                >
+              </section>
+            </div>
+          </form>
+          <div class="location">
+            <h3><span class="far fa-map-marker-alt"></span>Chennai</h3>
+            <p>F1,Saikripa Apartments, 78D,</p>
+            <p>Gulmohar avenue,Guindy,</p>
+            <p>Chennai TN 600032</p>
+            <hr />
+            <a href="tel:+91 9345760140">+91 9345760140</a>
+            <a href="mailto:sales@bdcode.in">sales@bdcode.in</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer" id="footer">
+      <div>
+        <h6>Products</h6>
+        <ul>
+          <li>Green chillies</li>
+          <li>Ginger</li>
+          <li>Granites</li>
+          <li>Apple</li>
+          <li>Turmeric</li>
+        </ul>
+      </div>
+      <div>
+        <h6>Get in Touch</h6>
+        <ul>
+          <li>sales@bdcode.in</li>
+          <li>PnB Exporters</li>
+          <li>
+            F1,Saikripa Apartments, 78D,<br />
+            Gulmohar avenue Velachery main road,<br />
+            Guindy
+          </li>
+          <li>Chennai TN 600032</li>
+          <li>+91 9345760140</li>
+        </ul>
+      </div>
+      <div>
+        <h6>Connect with Us</h6>
+        <div class="social-icons wd">
+          <i class="fab fa-facebook-f"></i>
+          <i class="fab fa-instagram"></i>
+          <i class="fas fa-phone-alt"></i>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+  <script>
+    function showlist() {
+      document.getElementById("small-menu").style.display = "flex";
+      document.getElementById("logo").style.visibility = "hidden";
+      document.body.style.overflow = "hidden";
+    }
+    function hidelist() {
+      document.getElementById("small-menu").style.display = "none";
+      document.getElementById("logo").style.visibility = "visible";
+      document.body.style.overflow = "visible";
+    }
+    window.addEventListener("scroll", function () {
+      if (window.pageYOffset > 600) {
+        document.getElementById("footer").style.position = "sticky";
+      } else {
+        document.getElementById("footer").style.position = "unset";
+      }
+    });
+    // function sendEmail() {
+    //   Email.send({
+    //     Host: "mail.ezveb.com",
+    //     Username: "prabha@sis.in",
+    //     Password: "Prabha1990",
+    //     To: "prabha1094@gmail.com",
+    //     From: "prabha@sis.in",
+    //     Subject: "Sending Email using javascript",
+    //     Body: "Well that was easy!!",
+    //   }).then(function (message) {
+    //     console.log(message);
+    //     // alert("mail sent successfully");
+    //   });
+    // }
+    $(document).ready(function () {
+      $("#mobile").keypress(function (e) {
+        if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+          // $("#errmsg").html("Digits Only").show().fadeOut("slow");
+          return false;
+        }
+      });
+    });
+
+    $("#myform").on("submit", function (event) {
+      event.preventDefault();
+      var title = localStorage.getItem("title");
+      var name = $("#name").val();
+      var email = $("#email").val();
+      var mobile = $("#mobile").val();
+      var message = $("#message").val();
+      var location = $("#location").val();
+      var company = $("#company").val();
+      mailbody =
+        '<html><div style="width: 100%;height: 100%;justify-content: center;align-items: center;font-family: Nunito Sans, sans-serif;font-size: 14px;"><div style="width:100%;max-width:900px;padding-top:2rem;"><div align="center" style="padding-left:30px;padding-right:30px;"></div><div style="font-size:16px;padding-left: 30px; padding-right: 30px;line-height:200%; margin-bottom:3rem" align="left"><div style="font-size:16px;font-family:Josefin Sans, sans-serif!important; width:100%; padding-top:20px;"><table width="100%" border="0" cellpadding="2" cellspacing="2"><tr><td  style="background-color:#efefef;width:30%;padding:5px 20px;">Name</td><td align="left" style="width:70%;padding:5px 20px;background-color: rgba(0,0,0,0.03);font-weight:500;color:#000000">' +
+        name +
+        '</td></tr><tr><td  style="background-color:#efefef;width:30%;padding:5px 20px;">Email</td><td align="left" style="width:70%;padding:5px 20px;background-color: rgba(0,0,0,0.03);font-weight:500;color:#000000">' +
+        email +
+        '</td></tr><tr><td  style="background-color:#efefef;width:30%;padding:5px 20px;">Mobile</td><td align="left" style="width:70%;padding:5px 20px;background-color: rgba(0,0,0,0.03);font-weight:500;color:#000000">' +
+        mobile +
+        '</td></tr><tr><td  style="background-color:#efefef;width:30%;padding:5px 20px;">Location</td><td align="left" style="width:70%;padding:5px 20px;background-color: rgba(0,0,0,0.03);font-weight:500;color:#000000">' +
+        location +
+        '</td></tr><tr><td  style="background-color:#efefef;width:30%;padding:5px 20px;">Company Name</td><td align="left" style="width:70%;padding:5px 20px;background-color: rgba(0,0,0,0.03);font-weight:500;color:#000000">' +
+        company +
+        '</td></tr><tr><td  style="background-color:#efefef;width:30%;padding:5px 20px;">Message</td><td align="left" style="width:70%;padding:5px 20px;background-color: rgba(0,0,0,0.03);font-weight:500;color:#000000">' +
+        message +
+        '</td></tr></table></div></div><div style="padding:5px 30px; background-color:#2D323D;" align="right"></div></div></div></html>';
+      if (title) {
+        var content = `Enquiry For ${title}`;
+      } else {
+        var content = "Enquiry";
+      }
+      $("#submit").prop("disabled", true);
+      $("#submit").html(
+        "<i class='fad fa-circle-notch fa-spin'style= 'font-size: 20px;color: white;'></i>"
+      );
+      $("#submit").css("background", "brown");
+      Email.send({
+        Host: "mail.ezveb.com",
+        Username: "prabha@sis.in",
+        Password: "Prabha1990",
+        To: "devaprakash.m1997@gmail.com",
+        From: "prabha@sis.in",
+        Subject: content,
+        Body: mailbody,
+      }).then(function (message) {
+        console.log(message);
+        if (message == "OK") {
+          $("#submit").html("Enquiry Sent");
+          $("#submit").css(
+            "background",
+            "linear-gradient(270deg, rgb(123 31 162 / 51%), rgb(71 98 255 / 52%))"
+          );
+          $("#myform")[0].reset();
+        } else {
+        }
+      });
+    });
+  </script>
+</html>

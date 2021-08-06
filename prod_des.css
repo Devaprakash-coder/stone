@@ -169,11 +169,11 @@ nav div {
 .btn-enquiry:first-of-type:hover {
   background: linear-gradient(90deg, #7b1fa2, #4762ff);
 }
-.btn-enquiry:last-child:hover {
+/* .btn-enquiry:last-child:hover {
   border: none;
   background: black;
   color: white;
-}
+} */
 @media (max-width: 480px) {
   ::-webkit-scrollbar {
     width: 0px;
@@ -249,6 +249,11 @@ nav div {
     to {
       transform: translateX(0%);
     }
+  }
+  .small-logo img {
+    width: 100%;
+    filter: invert(1);
+    height: 100%;
   }
   .footer {
     flex-direction: column;
@@ -369,6 +374,11 @@ nav div {
     font-size: 22px;
     color: white;
     text-decoration: none;
+  }
+  .small-logo img {
+    width: 100%;
+    filter: invert(1);
+    height: 100%;
   }
   .footer {
     top: 100px;

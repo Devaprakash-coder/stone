@@ -36,7 +36,7 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About Us</a></li>
           <li><a href="products.html">Products</a></li>
-          <li><a href="#footer">Contact</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
       <div class="social-icons">
@@ -61,7 +61,7 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About Us</a></li>
         <li><a href="products.html">Products</a></li>
-        <li><a href="#footer">Contact</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
     <!-- nav section ends -->
@@ -114,7 +114,7 @@
   <script>
     $(document).ready(function () {
       allProd();
-      pdf();
+      // pdf();
     });
   </script>
   <script>
@@ -128,6 +128,9 @@
             var card =
               '<div class = "card"  onclick="next(' +
               res[i].id +
+              ",'" +
+              res[i].prod_title +
+              "'" +
               ')">' +
               '<img src ="http://localhost:1342' +
               res[i].prod_img[0].url +
@@ -141,22 +144,22 @@
         },
       });
     }
-    function next(i) {
-      console.log(i);
-      localStorage.setItem("id", JSON.stringify(i));
+    function next(id, title) {
+      localStorage.setItem("id", JSON.stringify(id));
+      localStorage.setItem("title", title);
       document.location.href = "prod_des.html";
     }
-    function pdf() {
-      $.ajax({
-        url: "http://localhost:1342/pdfs",
-        type: "GET",
-        success: function (res) {
-          var download = document.getElementById("download");
-          var a = download.getElementsByTagName("a");
-          $(a).attr("href", `http://localhost:1342${res[0].pdf.url}`);
-        },
-      });
-    }
+    // function pdf() {
+    //   $.ajax({
+    //     url: "http://localhost:1342/pdfs",
+    //     type: "GET",
+    //     success: function (res) {
+    //       var download = document.getElementById("download");
+    //       var a = download.getElementsByTagName("a");
+    //       $(a).attr("href", `http://localhost:1342${res[0].pdf.url}`);
+    //     },
+    //   });
+    // }
     function showlist() {
       document.getElementById("small-menu").style.display = "flex";
       document.getElementById("logo").style.visibility = "hidden";

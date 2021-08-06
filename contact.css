@@ -1,0 +1,230 @@
+.footer {
+  bottom: 0;
+  z-index: 0;
+}
+hr {
+  width: 10%;
+}
+.temp {
+  width: 100%;
+  height: 400px;
+  position: relative;
+  background: white;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.form-div {
+  width: 100%;
+  height: 140vh;
+  position: relative;
+  z-index: 1;
+  background: #ebebeb;
+  display: flex;
+  justify-content: center;
+}
+.form-box {
+  width: 85%;
+  height: 65%;
+  background: white;
+  position: absolute;
+  top: -100px;
+  box-shadow: 0px 0px 8px 0px #8e8a8a;
+}
+.head-div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 40%;
+  padding: 0px 30px;
+}
+.heading h2 {
+  font-size: 40px;
+}
+.heading p {
+  width: 85%;
+  font-size: 18px;
+  color: #605c5c;
+  font-weight: 600;
+}
+.form {
+  height: 50%;
+}
+form {
+  display: flex;
+  height: 100%;
+  justify-content: space-around;
+}
+form div {
+  width: 45%;
+  height: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+form div:last-of-type {
+  align-items: flex-start;
+  height: 100%;
+}
+form div input,
+textarea {
+  width: 87%;
+  padding: 15px 0px;
+  border: none;
+  border-bottom: 1px solid #7575757a;
+  outline: none;
+  font-size: 17px;
+  transition: all 0.5s;
+  font-family: "Nunito Sans";
+}
+textarea {
+  padding: 0;
+}
+textarea::placeholder {
+  color: #7575757a;
+}
+input::placeholder {
+  color: #7575757a;
+  transition: all 0.5s;
+}
+input:focus::placeholder,
+textarea:focus::placeholder {
+  color: #757575;
+  transition: all 0.5s;
+}
+input:focus,
+textarea:focus {
+  border-bottom: 1px solid #757575;
+  transition: all 0.5s;
+}
+form section {
+  width: 88%;
+  justify-content: flex-end;
+  display: flex;
+}
+button {
+  height: 40px;
+  width: 140px;
+  border: none;
+  font-size: 14px;
+  font-family: "Nunito Sans";
+  color: white;
+  background: none;
+  transition: all 0.5s;
+}
+section button:first-of-type {
+  font-weight: 600;
+  background: linear-gradient(270deg, #7b1fa2, #4762ff);
+  border: none;
+}
+section button:first-of-type:hover {
+  background: linear-gradient(90deg, #7b1fa2, #4762ff);
+}
+section a button:last-of-type {
+  border: 1px solid lightgray;
+  background: none;
+  color: black;
+  margin-left: 20px;
+}
+section a button:last-of-type:hover {
+  border: 1px solid transparent;
+  background: black;
+  color: white;
+  transition: all 0.5s;
+}
+.location {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: 100px;
+  color: black;
+}
+.location span {
+  margin-right: 10px;
+  color: #605c5c;
+  font-size: 20px;
+}
+.location h3 {
+  font-size: 30px;
+  margin: 10px 0px;
+}
+.location p,
+.location a {
+  margin: 0;
+  line-height: 2;
+  text-decoration: none;
+  color: #605c5c;
+}
+@media (max-width: 480px) {
+  .temp {
+    height: 200px;
+    justify-content: unset;
+    padding: 30px 0px;
+  }
+  .icon-div {
+    display: none;
+  }
+  .head-div {
+    height: 25%;
+  }
+  .heading h2 {
+    font-size: 30px;
+  }
+  .heading p {
+    font-size: 16px;
+    width: 90%;
+  }
+  .form-box {
+    height: 80%;
+    width: 95%;
+    box-shadow: 0px 0px 11px 6px #ebebeb;
+  }
+  .form {
+    height: 70%;
+  }
+  form div input,
+  textarea {
+    font-size: 15px;
+  }
+  form {
+    flex-direction: column;
+    justify-content: unset;
+  }
+  form div {
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+    height: 55%;
+  }
+  form div:last-of-type {
+    align-items: center;
+    height: 75%;
+    justify-content: space-around;
+  }
+  form section {
+    width: 88%;
+    justify-content: center;
+    display: flex;
+    height: 20%;
+    align-items: flex-end;
+  }
+  .location {
+    height: 45%;
+    justify-content: unset;
+    top: 50px;
+  }
+  .location p,
+  .location a {
+    line-height: 1.5;
+  }
+  hr {
+    width: 25%;
+  }
+}

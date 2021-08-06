@@ -37,7 +37,7 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About Us</a></li>
           <li><a href="products.html">Products</a></li>
-          <li><a href="#footer">Contact</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
       <div class="social-icons">
@@ -62,7 +62,7 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About Us</a></li>
         <li><a href="products.html">Products</a></li>
-        <li><a href="#footer">Contact</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
     <!-- nav section ends -->
@@ -70,8 +70,10 @@
     <div class="container-section">
       <div class="product_images" id="product_images"></div>
       <div class="product_description" id="product_description">
-        <button class="btn-enquiry">Enquire Now</button>
-        <button class="btn-enquiry" onclick="pdf()">Download Brochure</button>
+        <a href="contact.html">
+          <button class="btn-enquiry">Enquire Now</button></a
+        >
+        <!-- <button class="btn-enquiry" onclick="pdf()">Download Brochure</button> -->
       </div>
     </div>
 
@@ -177,15 +179,15 @@
         },
       });
     }
-    function pdf() {
-      $.ajax({
-        url: "http://localhost:1342/pdfs",
-        type: "GET",
-        success: function (res) {
-          window.open(`http://localhost:1342${res[0].pdf.url}`, "_blank");
-        },
-      });
-    }
+    // function pdf() {
+    //   $.ajax({
+    //     url: "http://localhost:1342/pdfs",
+    //     type: "GET",
+    //     success: function (res) {
+    //       window.open(`http://localhost:1342${res[0].pdf.url}`, "_blank");
+    //     },
+    //   });
+    // }
     function showlist() {
       document.getElementById("small-menu").style.display = "flex";
       document.getElementById("logo").style.visibility = "hidden";
