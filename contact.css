@@ -117,11 +117,11 @@ button {
 }
 section button:first-of-type {
   font-weight: 600;
-  background: linear-gradient(270deg, #7b1fa2, #4762ff);
+  background: linear-gradient(270deg, #649b3c, #0c6392);
   border: none;
 }
 section button:first-of-type:hover {
-  background: linear-gradient(90deg, #7b1fa2, #4762ff);
+  background: linear-gradient(90deg, #649b3c, #0c6392);
 }
 section a button:last-of-type {
   border: 1px solid lightgray;

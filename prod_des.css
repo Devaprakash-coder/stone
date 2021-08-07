@@ -27,8 +27,7 @@ nav {
   color: #d6cece;
   position: fixed;
   width: 100%;
-  filter: invert(1);
-  background: black;
+  background: white;
   box-shadow: 0px 1px 8px 0px #948d8d;
   z-index: 9;
   top: 0;
@@ -46,7 +45,6 @@ nav div {
   width: 50%;
   height: 70%;
   cursor: pointer;
-  filter: invert(1);
 }
 .menu-list {
   width: 40%;
@@ -66,7 +64,7 @@ nav div {
   font-weight: 500;
   letter-spacing: 0.02em;
   cursor: pointer;
-  color: #d6cece;
+  color: #6b6868;
   text-decoration: none;
 }
 .social-icons {
@@ -77,12 +75,12 @@ nav div {
   font-size: 20px;
   cursor: pointer;
   margin-right: 30px;
+  color: #6b6868;
 }
-.menu-list ul li:hover,
+.menu-list ul li a:hover,
 .social-icons i:hover {
-  color: white;
+  color: #88b454;
 }
-
 .footer {
   display: flex;
   justify-content: space-between;
@@ -114,6 +112,10 @@ nav div {
   width: 100%;
   color: #98a2aa;
 }
+.footer ul li:hover,
+.wd i:hover {
+  color: white;
+}
 /* product description */
 .container-section {
   margin-top: 120px;
@@ -124,7 +126,7 @@ nav div {
   padding-left: 20px;
   font-size: 20px;
   font-weight: 600;
-  color: gray;
+  color: #71a2be;
 }
 .product_images {
   flex: 0.5;
@@ -148,7 +150,7 @@ nav div {
   padding: 0px 10px;
 }
 .container-section li::marker {
-  color: #888888;
+  color: #74a838;
   font-size: 18px;
 }
 .btn-enquiry {
@@ -163,11 +165,11 @@ nav div {
 .btn-enquiry:first-of-type {
   font-weight: 600;
   color: white;
-  background: linear-gradient(270deg, #7b1fa2, #4762ff);
+  background: linear-gradient(270deg, #649b3c, #0c6392);
   border: none;
 }
 .btn-enquiry:first-of-type:hover {
-  background: linear-gradient(90deg, #7b1fa2, #4762ff);
+  background: linear-gradient(90deg, #649b3c, #0c6392);
 }
 /* .btn-enquiry:last-child:hover {
   border: none;
