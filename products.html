@@ -120,7 +120,7 @@
   <script>
     function allProd() {
       $.ajax({
-        url: "http://localhost:1342/All-Products",
+        url: "https://training.yssentials.com/All-Products",
         type: "GET",
         success: function (res) {
           console.log(res);
@@ -132,7 +132,7 @@
               res[i].prod_title +
               "'" +
               ')">' +
-              '<img src ="http://localhost:1342' +
+              '<img src ="https://training.yssentials.com' +
               res[i].prod_img[0].url +
               '"/>' +
               "<h2>" +

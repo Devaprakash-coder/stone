@@ -330,13 +330,13 @@
     }
     function strapibanner() {
       $.ajax({
-        url: "http://localhost:1342/banners",
+        url: "https://training.yssentials.com/banners",
         type: "GET",
         success: function (res) {
           console.log(res);
           $.each(res[0].banner_img, function (i, item) {
             var banner =
-              '<img src ="http://localhost:1342' +
+              '<img src ="https://training.yssentials.com' +
               res[0].banner_img[i].url +
               '"/>';
             $("#banner").append(banner);
@@ -361,13 +361,13 @@
     }
     function BestProd() {
       $.ajax({
-        url: "http://localhost:1342/products",
+        url: "https://training.yssentials.com/products",
         type: "GET",
         success: function (res) {
           $.each(res, function (i, item) {
             var bestprod =
               '<div class="img-box">' +
-              '<img src ="http://localhost:1342' +
+              '<img src ="https://training.yssentials.com' +
               res[i].prod_img.url +
               '"/>' +
               "<h2>" +
