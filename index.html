@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Stones</title>
+    <title>Pnb Exporters</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -366,7 +366,7 @@
         success: function (res) {
           $.each(res, function (i, item) {
             var bestprod =
-              '<div class="img-box">' +
+              '<div onclick = "product()" class="img-box">' +
               '<img src ="https://training.yssentials.com' +
               res[i].prod_img.url +
               '"/>' +

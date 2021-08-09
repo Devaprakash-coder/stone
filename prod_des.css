@@ -12,7 +12,7 @@ body {
   width: 5px;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: purple;
+  background-color: #88b454;
   border-radius: 20px;
 }
 ::-webkit-scrollbar-track {
@@ -159,13 +159,13 @@ nav div {
   font-size: 15px;
   height: 57px;
   width: 160px;
-  transition: all 0.5s;
+  /* transition: all 0.5s; */
   margin-right: 15px;
 }
 .btn-enquiry:first-of-type {
   font-weight: 600;
   color: white;
-  background: linear-gradient(270deg, #649b3c, #0c6392);
+  background: firebrick;
   border: none;
 }
 .btn-enquiry:first-of-type:hover {
