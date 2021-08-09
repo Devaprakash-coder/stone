@@ -60,10 +60,16 @@ nav div {
 .logo {
   width: 20%;
 }
-.logo img {
+.logo a {
   width: 50%;
   height: 70%;
   cursor: pointer;
+}
+.logo a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 .menu-list {
   width: 40%;
@@ -273,24 +279,24 @@ nav div {
   color: white;
   transition: all 0.5s;
 }
-.about-btn a:first-of-type {
+.about-btn a {
   font-weight: 600;
   color: white;
   background: firebrick;
   border: none;
 }
-.about-btn a:first-of-type:hover,
+.about-btn a:hover,
 .ask-email button:hover {
   background: linear-gradient(90deg, #649b3c, #0c6392);
 }
-.about-btn a:last-of-type {
+/* .about-btn a:last-of-type {
   border: 1px solid lightgray;
 }
 .about-btn a:last-of-type:hover {
   border: 1px solid transparent;
   background: black;
   color: white;
-}
+} */
 .feedback {
   padding: 100px;
   background: url(images/bg-2.jpg);
@@ -470,6 +476,22 @@ nav div {
   background: #2d323d;
   color: #98a2aa;
   border-top: 1px solid;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.footer-btm a {
+  width: 17%;
+  background: linear-gradient(270deg, #649b3c, #0c6392);
+  padding: 12px;
+  font-weight: 900;
+  color: white;
+  font-size: 16px;
+  text-decoration: none;
+  border-radius: 3px;
+}
+.footer-btm span img {
+  width: 30%;
 }
 
 @media (max-width: 480px) {
@@ -498,7 +520,7 @@ nav div {
   .icon i {
     font-size: 35px;
   }
-  .close {
+  /* .close {
     position: absolute;
     left: -30%;
     top: 0%;
@@ -508,11 +530,11 @@ nav div {
     display: flex !important;
     align-items: center;
     justify-content: center;
-  }
+  } */
   .close-in {
     position: absolute;
-    top: 90px;
-    right: 30px;
+    top: 40px;
+    right: 25px;
     font-size: 28px;
     width: 40px;
     height: 40px;
@@ -690,6 +712,12 @@ nav div {
     padding: 30px 0px;
     font-size: 10px;
   }
+  .footer-btm {
+    flex-direction: column;
+  }
+  .footer-btm a {
+    width: 50%;
+  }
 }
 
 @media (min-width: 480px) and (max-width: 991px) {
@@ -718,7 +746,7 @@ nav div {
     font-size: 35px;
     margin-right: 20px;
   }
-  .close {
+  /* .close {
     position: absolute;
     left: -30%;
     top: 0%;
@@ -728,11 +756,11 @@ nav div {
     display: flex !important;
     align-items: center;
     justify-content: center;
-  }
+  } */
   .close-in {
     position: absolute;
-    top: 90px;
-    right: 30px;
+    top: 40px;
+    right: 25px;
     font-size: 28px;
     width: 40px;
     height: 40px;
@@ -855,5 +883,8 @@ nav div {
   .footer-btm {
     padding: 30px 0px;
     font-size: 10px;
+  }
+  .footer-btm a {
+    width: 22%;
   }
 }
