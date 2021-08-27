@@ -25,6 +25,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="icon" href="images/logo_small.png" type="image/icon type" />
   </head>
 
   <body>
@@ -69,24 +70,16 @@
     <div id="banner"></div>
     <div class="card-div">
       <div class="card">
-        <i class="material-icons">campaign</i>
-        <h4>Complete Transparency</h4>
-        <p>Experience total transparency in all transactions</p>
+        <h4>100% Genuine</h4>
       </div>
       <div class="card">
-        <i class="material-icons">enhanced_encryption</i>
-        <h4>Client Commitment</h4>
-        <p>Hard-wired to deliver only excellent service</p>
+        <h4>Reliable Service</h4>
       </div>
       <div class="card">
-        <i class="material-icons">payments</i>
-        <h4>Trouble-free Transactions</h4>
-        <p>Support for every transaction</p>
+        <h4>Quick Delivery</h4>
       </div>
       <div class="card">
-        <i class="material-icons">insights</i>
-        <h4>Gainful Insights</h4>
-        <p>Real-time market pricing</p>
+        <h4>Lowest Pricing</h4>
       </div>
     </div>
     <div class="prod-div">
@@ -105,7 +98,7 @@
             data-aos-duration="1000"
             data-aos-once="true"
           >
-            <img src="images/logo_wht.png" alt="" />
+            <img src="images/logo.png" alt="" />
           </div>
         </div>
       </div>
@@ -207,11 +200,11 @@
         <div>
           <h6>Products</h6>
           <ul>
-            <li>Green chillies</li>
-            <li>Ginger</li>
-            <li>Granites</li>
-            <li>Apple</li>
-            <li>Turmeric</li>
+            <li onclick="next(35,'Green chillies')">Green chillies</li>
+            <li onclick="next(36,'Ginger')">Ginger</li>
+            <li onclick="next(37,'Granites')">Granites</li>
+            <li onclick="next(38,'Apple')">Apple</li>
+            <li onclick="next(39,'Turmeric')">Turmeric</li>
           </ul>
         </div>
         <div>
@@ -372,7 +365,12 @@
         success: function (res) {
           $.each(res, function (i, item) {
             var bestprod =
-              '<div onclick = "product()" class="img-box">' +
+              '<div onclick = "next(' +
+              parseInt(35 + i) +
+              ",'" +
+              res[i].product +
+              "'" +
+              ')" class="img-box">' +
               '<img src ="https://training.yssentials.com' +
               res[i].prod_img.url +
               '"/>' +
@@ -384,6 +382,11 @@
           });
         },
       });
+    }
+    function next(id, title) {
+      localStorage.setItem("id", JSON.stringify(id));
+      localStorage.setItem("title", title);
+      document.location.href = "prod_des.html";
     }
   </script>
 </html>

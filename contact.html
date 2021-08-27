@@ -26,6 +26,7 @@
       integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
       crossorigin="anonymous"
     />
+    <link rel="icon" href="images/logo_small.png" type="image/icon type" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   </head>
   <style>
@@ -210,11 +211,11 @@
       <div>
         <h6>Products</h6>
         <ul>
-          <li>Green chillies</li>
-          <li>Ginger</li>
-          <li>Granites</li>
-          <li>Apple</li>
-          <li>Turmeric</li>
+          <li onclick="next(35,'Green chillies')">Green chillies</li>
+          <li onclick="next(36,'Ginger')">Ginger</li>
+          <li onclick="next(37,'Granites')">Granites</li>
+          <li onclick="next(38,'Apple')">Apple</li>
+          <li onclick="next(39,'Turmeric')">Turmeric</li>
         </ul>
       </div>
       <div>
@@ -346,5 +347,10 @@
         }
       });
     });
+    function next(id, title) {
+      localStorage.setItem("id", JSON.stringify(id));
+      localStorage.setItem("title", title);
+      document.location.href = "prod_des.html";
+    }
   </script>
 </html>
