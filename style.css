@@ -3,6 +3,7 @@ body {
   padding: 0;
   font-family: "Nunito Sans", sans-serif;
   scroll-behavior: smooth;
+  overflow: overlay;
 }
 .small-nav,
 #small-menu {
@@ -12,12 +13,12 @@ body {
   width: 5px;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: #88b454;
+  background-color: #dbc406;
   border-radius: 20px;
 }
-::-webkit-scrollbar-track {
+/* ::-webkit-scrollbar-track {
   background-color: white;
-}
+} */
 
 nav {
   background: transparent;
@@ -41,7 +42,7 @@ nav {
 }
 .fixed .menu-list ul li a:hover,
 .fixed .social-icons i:hover {
-  color: #88b454;
+  color: #dac30d;
 }
 .fixed .logo a img {
   filter: invert(0);
@@ -167,7 +168,7 @@ nav div {
   transition: all 0.2s;
 }
 .card:hover h4 {
-  background: linear-gradient(0deg, #8dff3a, #00a6ff);
+  background: linear-gradient(305deg, #dbc503, #00a6ff);
 }
 .card h4 {
   font-size: 20px;
@@ -240,7 +241,7 @@ nav div {
 .color {
   width: 80%;
   height: 90%;
-  background: linear-gradient(330deg, #649b3c, #0c6392);
+  background: linear-gradient(330deg, #dbc406, #0c6392);
   position: relative;
 }
 .color-img {
@@ -301,7 +302,7 @@ nav div {
 }
 .about-btn a:hover,
 .ask-email button:hover {
-  background: linear-gradient(90deg, #649b3c, #0c6392);
+  background: linear-gradient(90deg, #dcc602, #0c6392);
 }
 /* .about-btn a:last-of-type {
   border: 1px solid lightgray;
@@ -402,7 +403,7 @@ nav div {
   position: relative;
 }
 .counts div:hover h1 {
-  color: forestgreen;
+  color: #dcc602;
   transition: all 0.5s;
 }
 .counts h1 {
@@ -430,7 +431,7 @@ nav div {
   font-size: 3em;
   line-height: 1.5;
   font-weight: 100;
-  color: #77ab3d;
+  color: #dbc406;
 }
 .ask-head h1::first-line {
   color: white;
@@ -497,7 +498,7 @@ nav div {
 }
 .footer-btm a {
   width: 17%;
-  background: linear-gradient(270deg, #649b3c, #0c6392);
+  background: linear-gradient(270deg, #d9c20abf, #0c6392);
   padding: 12px;
   font-weight: 900;
   color: white;
@@ -566,7 +567,7 @@ nav div {
     position: fixed;
     top: 0;
     z-index: 9;
-    background: linear-gradient(270deg, #649b3c, #0c6392);
+    background: linear-gradient(270deg, #dcc602, #0c6392);
     right: 0;
     display: flex;
     align-items: center;
@@ -792,7 +793,7 @@ nav div {
     position: fixed;
     top: 0;
     z-index: 9;
-    background: linear-gradient(270deg, #649b3c, #0c6392);
+    background: linear-gradient(270deg, #dcc602, #0c6392);
     right: 0;
     display: flex;
     align-items: center;

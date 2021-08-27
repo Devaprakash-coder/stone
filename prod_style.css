@@ -3,6 +3,7 @@ body {
   padding: 0;
   font-family: "Nunito Sans", sans-serif;
   scroll-behavior: smooth;
+  overflow: overlay;
 }
 .small-nav,
 #small-menu {
@@ -12,12 +13,10 @@ body {
   width: 5px;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: #88b454;
+  background-color: #dcc602;
   border-radius: 20px;
 }
-::-webkit-scrollbar-track {
-  background-color: white;
-}
+
 nav {
   display: flex;
   justify-content: space-between;
@@ -86,7 +85,7 @@ nav div {
 }
 .menu-list ul li a:hover,
 .social-icons i:hover {
-  color: #88b454;
+  color: #e5d65f;
 }
 .prod-div {
   width: 100%;
@@ -101,7 +100,7 @@ nav div {
 hr {
   width: 10%;
   height: 2px;
-  background: #74a838;
+  background: #dcc602;
   border: none;
 }
 .cards {
@@ -126,7 +125,7 @@ hr {
   transition: all 0.5s;
 }
 .card:hover h2 {
-  color: #74a838;
+  color: #dcc505;
   transition: all 0.5s;
 }
 .card img {
@@ -215,7 +214,7 @@ hr {
 }
 .footer-btm a {
   width: 17%;
-  background: linear-gradient(270deg, #649b3c, #0c6392);
+  background: linear-gradient(270deg, #d9c20abf, #0c6392);
   padding: 12px;
   font-weight: 900;
   color: white;
@@ -283,7 +282,7 @@ hr {
     position: fixed;
     top: 0;
     z-index: 9;
-    background: linear-gradient(270deg, #649b3c, #0c6392);
+    background: linear-gradient(270deg, #d9c20abf, #0c6392);
     right: 0;
     display: flex;
     align-items: center;
@@ -411,7 +410,7 @@ hr {
     position: fixed;
     top: 0;
     z-index: 9;
-    background: linear-gradient(270deg, #649b3c, #0c6392);
+    background: linear-gradient(270deg, #d9c20abf, #0c6392);
     right: 0;
     display: flex;
     align-items: center;

@@ -1,6 +1,3 @@
-::-webkit-scrollbar {
-  width: 0px;
-}
 .about-div {
   display: flex;
   flex-direction: column;

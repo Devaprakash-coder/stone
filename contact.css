@@ -122,7 +122,7 @@ section button {
   margin-right: 20px;
 }
 section button:hover {
-  background: linear-gradient(90deg, #649b3c, #0c6392);
+  background: linear-gradient(90deg, #dcc602, #0c6392);
 }
 /* section a button:last-of-type {
   border: 1px solid lightgray;

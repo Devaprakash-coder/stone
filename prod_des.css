@@ -3,6 +3,7 @@ body {
   padding: 0;
   font-family: "Nunito Sans", sans-serif;
   scroll-behavior: smooth;
+  overflow: overlay;
 }
 .small-nav,
 #small-menu {
@@ -12,11 +13,8 @@ body {
   width: 5px;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: #88b454;
+  background-color: #dbc603;
   border-radius: 20px;
-}
-::-webkit-scrollbar-track {
-  background-color: white;
 }
 
 nav {
@@ -87,7 +85,7 @@ nav div {
 }
 .menu-list ul li a:hover,
 .social-icons i:hover {
-  color: #88b454;
+  color: #dbc603;
 }
 .footer {
   display: flex;
@@ -140,7 +138,7 @@ nav div {
 }
 .footer-btm a {
   width: 17%;
-  background: linear-gradient(270deg, #649b3c, #0c6392);
+  background: linear-gradient(270deg, #d9c20abf, #0c6392);
   padding: 12px;
   font-weight: 900;
   color: white;
@@ -206,7 +204,7 @@ nav div {
   border: none;
 }
 .btn-enquiry:first-of-type:hover {
-  background: linear-gradient(90deg, #649b3c, #0c6392);
+  background: linear-gradient(90deg, #dbc603, #0c6392);
 }
 /* .btn-enquiry:last-child:hover {
   border: none;
@@ -270,7 +268,7 @@ nav div {
     position: fixed;
     top: 0;
     z-index: 9;
-    background: linear-gradient(270deg, #649b3c, #0c6392);
+    background: linear-gradient(270deg, #dbc603, #0c6392);
     right: 0;
     display: flex;
     align-items: center;
@@ -399,7 +397,7 @@ nav div {
     position: fixed;
     top: 0;
     z-index: 9;
-    background: linear-gradient(270deg, #649b3c, #0c6392);
+    background: linear-gradient(270deg, #dbc603, #0c6392);
     right: 0;
     display: flex;
     align-items: center;
